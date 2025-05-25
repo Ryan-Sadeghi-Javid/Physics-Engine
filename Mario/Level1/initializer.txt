@@ -1,0 +1,28 @@
+background 80 128 255
+1 40 0 50 50 Sprites/mario_sprite_idle.png
+8 100 50 100 75 Sprites/mario_cloud.png
+8 300 70 225 175 Sprites/mario_long_cloud.png
+8 775 50 100 75 Sprites/mario_cloud.png
+8 1200 60 100 75 Sprites/mario_cloud.png
+8 1500 50 225 175 Sprites/mario_long_cloud.png
+8 3000 0 225 175 Sprites/mario_long_cloud.png
+8 3300 100 100 75 Sprites/mario_cloud.png
+8 100 500 200 100 Sprites/hill.png
+7 -750 200 750 500 Sprites/rock_block.png (Top of left wall)
+7 -750 -300 750 500 Sprites/rock_block.png (Bottom of left wall)
+7 0 600 750 500 Sprites/rock_block.png (First platform)
+5 300 400 50 50 Sprites/questionblock.jpg 50 50 Sprites/mushroom.png (Question block)
+7 950 600 1150 500 Sprites/rock_block.png (Platform with two pipes)
+8 1400 500 200 100 Sprites/hill.png
+4 1200 500 100 100 Sprites/Pipe.png (Pipe 1)
+4 1700 500 100 100 Sprites/Pipe.png (Pipe 2)
+2 1550 300 50 50 Sprites/Goomba.png
+7 2500 450 700 500 Sprites/rock_block.png (Platform with question block and two pipes)
+8 2700 350 200 100 Sprites/hill.png
+4 2550 350 100 100 Sprites/Pipe.png
+3 2650 350 50 50 Sprites/turtle.png Sprites/shell.png
+4 3100 350 100 100 Sprites/Pipe.png
+5 2800 200 50 50 Sprites/questionblock.jpg 50 50 Sprites/mushroom.png (Question block)
+7 3900 600 3000 500 Sprites/rock_block.png (small platform)
+6 4000 350 70 250 Sprites/Mario_Flagpole.png
+8 4250 300 300 300 Sprites/mario_castle.png

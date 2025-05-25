@@ -1,0 +1,5 @@
+"Java in Two Semesters" https://link.springer.com/book/10.1007/978-3-319-99420-8
+or https://drive.google.com/file/d/1PkIrs9nfzDJ-ptigFo6IiYQYfVyA1lyu/view?usp=sharing
+
+The damping for collision:
+https://math.libretexts.org/Bookshelves/Calculus/Book%3A_Calculus_(OpenStax)/17%3A_Second-Order_Differential_Equations/17.3%3A_Applications_of_Second-Order_Differential_Equations

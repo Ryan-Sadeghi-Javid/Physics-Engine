@@ -1,0 +1,458 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "ICS4UProject.Body",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1237709535 { 
+   	label=ICS4UProject
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Body1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(I)Body</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getDrag(): Vector</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getDragCoe(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getFriction(): Vector</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getGravity(): Vector</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNormalForce(): Vector</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setDragCoe(dragCoe: double)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setFriction(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setGravity(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ setNormalForce(v: Vector)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#F1E5FD"
+];
+
+BodyImage1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BodyImage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   drag: Drag [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   friction: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   gravity: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForce: Vector [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BodyRec1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BodyRec</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   drag: Drag [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   friction: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   gravity: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForce: Vector [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CollisionBodyImage1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CollisionBodyImage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   COLLIDER_WIDTH: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   WALL_MARGIN: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   colliders: Rectangle[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collideWith(o: KineticsWithSize): CollisionEvent</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CollisionBodyRec1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CollisionBodyRec</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   COLLIDER_WIDTH: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   WALL_MARGIN: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   colliders: Rectangle[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collideWith(o: KineticsWithSize): CollisionEvent</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Drag1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Drag</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   dragCoe: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   obj: Kinetic [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Enemy1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Enemy</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   platformImageList: ArrayList&lt;PlatformImage&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+EnemyShell1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)EnemyShell</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   hit: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   pickUp: boolean [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GameObject1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GameObject</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   CameraPosition: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   ObjectPosition: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   acceleration: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   appliedForce: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   elasticity: double[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   forceList: ArrayList&lt;Vector&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   frictionCoe: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mass: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   position: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   velocity: Vector [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addAcceleration(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addAppliedForce(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addCameraPosition(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addDisplacement(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ addVelocity(v: Vector)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updatePosition(elapsedTime: long)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateRelativePosition()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GameObjectImage1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GameObjectImage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   image: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sizeX: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sizeY: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ isCollide(o: Object): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GameObjectRec1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GameObjectRec</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   rec: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sizeX: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sizeY: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ isCollide(o: Object): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+InteractiveObjectImage1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)InteractiveObjectImage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   kineticList: ArrayList&lt;Body&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForceList: ArrayList&lt;Vector&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addKinetic(k: Body)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collide()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+InteractiveObjectRec1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)InteractiveObjectRec</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   kineticList: ArrayList&lt;Body&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForceList: ArrayList&lt;Vector&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addKinetic(k: Body)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collide()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Platform1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Platform</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bodyArrayList: ArrayList&lt;Body&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForceList: ArrayList&lt;Vector&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addKinetic(k: Body)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collide()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PlatformImage1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlatformImage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   bodyArrayList: ArrayList&lt;Body&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   normalForceList: ArrayList&lt;Vector&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addKinetic(k: Body)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ collide()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Player1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Player</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   PlatformImageList: ArrayList&lt;PlatformImage&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   horizontalForce: Vector [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isUpdate: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   k: KeyInput [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   playerStates: Image[] [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ close()</TD></TR>
+<TR><TD ALIGN="LEFT" >- keyMovement()</TD></TR>
+<TR><TD ALIGN="LEFT" >- touchingGround(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ update(elapsedTime: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Vector1237709535[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Vector</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   x: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   y: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ add(o: Vector): Vector</TD></TR>
+<TR><TD ALIGN="LEFT" >+ dotProduct(o: Vector): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ length(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ multiply(coe: double): Vector</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Body1237709535 -> BodyImage1237709535[arrowhead=none, arrowtail=empty, dir=both];
+Body1237709535 -> BodyRec1237709535[arrowhead=none, arrowtail=empty, dir=both];
+Body1237709535 -> GameObject1237709535[arrowhead=none];
+Body1237709535 -> GameObjectImage1237709535[arrowhead=none];
+Body1237709535 -> GameObjectRec1237709535[arrowhead=none];
+BodyImage1237709535 -> CollisionBodyImage1237709535[arrowhead=none, arrowtail=empty, dir=both];
+BodyImage1237709535 -> Drag1237709535[label="drag
+[0..1]"];
+BodyImage1237709535 -> Vector1237709535[label="friction
+[0..1]"];
+BodyImage1237709535 -> Vector1237709535[label="gravity
+[0..1]"];
+BodyImage1237709535 -> Vector1237709535[label="normalForce
+[0..1]"];
+BodyRec1237709535 -> CollisionBodyRec1237709535[arrowhead=none, arrowtail=empty, dir=both];
+BodyRec1237709535 -> Drag1237709535[label="drag
+[0..1]"];
+BodyRec1237709535 -> Vector1237709535[label="friction
+[0..1]"];
+BodyRec1237709535 -> Vector1237709535[label="gravity
+[0..1]"];
+BodyRec1237709535 -> Vector1237709535[label="normalForce
+[0..1]"];
+CollisionBodyImage1237709535 -> Enemy1237709535[arrowhead=none, arrowtail=empty, dir=both];
+CollisionBodyImage1237709535 -> EnemyShell1237709535[label="close() -> close()"];
+CollisionBodyImage1237709535 -> GameObjectImage1237709535[label="close() -> close()"];
+CollisionBodyImage1237709535 -> InteractiveObjectImage1237709535[arrowhead=none, arrowtail=empty, dir=both];
+CollisionBodyImage1237709535 -> Player1237709535[arrowhead=none, arrowtail=empty, dir=both];
+CollisionBodyRec1237709535 -> Body1237709535[arrowhead=none];
+CollisionBodyRec1237709535 -> GameObjectImage1237709535[arrowhead=none];
+CollisionBodyRec1237709535 -> GameObjectRec1237709535[label="close() -> close()"];
+CollisionBodyRec1237709535 -> InteractiveObjectRec1237709535[arrowhead=none, arrowtail=empty, dir=both];
+Drag1237709535 -> Body1237709535[label="obj
+[0..1]", arrowhead=none];
+GameObjectImage1237709535 -> BodyImage1237709535[arrowhead=none, arrowtail=empty, dir=both];
+GameObjectRec1237709535 -> BodyRec1237709535[arrowhead=none, arrowtail=empty, dir=both];
+InteractiveObjectImage1237709535 -> Body1237709535[label="kineticList
+[0..*]"];
+InteractiveObjectRec1237709535 -> Body1237709535[label="kineticList
+[0..*]"];
+Platform1237709535 -> Body1237709535[label="bodyArrayList
+[0..*]"];
+PlatformImage1237709535 -> Body1237709535[label="bodyArrayList
+[0..*]"];
+Vector1237709535 -> Drag1237709535[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

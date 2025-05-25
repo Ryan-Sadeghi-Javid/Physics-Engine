@@ -1,0 +1,40 @@
+background 0 0 0
+1 0 550 50 50 Sprites/mario_sprite_idle.png
+3 300 550 50 50 Sprites/turtle.png Sprites/shell.png
+7 -750 200 750 500 Sprites/castle_block.png (Top of left wall)
+7 -750 -300 750 500 Sprites/castle_block.png (Bottom of left wall)
+7 0 600 700 500 Sprites/castle_block.png (First platform)
+7 0 400 500 50 Sprites/castle_block.png
+7 200 200 500 50 Sprites/castle_block.png
+7 650 200 200 1000 Sprites/castle_block.png
+8 850 400 200 300 Sprites/mario_lava.png
+l 920 500 50 50 Sprites/LavaBubbleSMB.png
+7 1050 350 200 400 Sprites/castle_block.png
+8 1250 400 200 300 Sprites/mario_lava.png
+l 1350 500 50 50 Sprites/LavaBubbleSMB.png
+l 1450 500 50 50 Sprites/LavaBubbleSMB.png
+8 1450 400 200 300 Sprites/mario_lava.png
+7 1650 350 200 400 Sprites/castle_block.png
+7 1850 500 1000 500 Sprites/castle_block.png
+7 1900 600 50 100 Sprites/castle_block.png
+7 1950 650 50 50 Sprites/castle_block.png
+5 2000 300 50 50 Sprites/questionblock.jpg 50 50 Sprites/mushroom.png
+3 2700 300 50 50 Sprites/turtle.png Sprites/shell.png
+7 2800 450 50 50 Sprites/castle_block.png
+9 3200 400 150 30 Sprites/lift.jpg
+9 3000 500 150 30 Sprites/lift.jpg
+7 3500 450 75 550 Sprites/castle_block.png (Stairs)
+7 3575 350 75 550 Sprites/castle_block.png (Stairs)
+7 3650 250 75 550 Sprites/castle_block.png (Stairs)
+7 3725 150 75 550 Sprites/castle_block.png (Stairs)
+9 3850 150 150 30 Sprites/lift.jpg
+9 4050 200 150 30 Sprites/lift.jpg
+9 4250 250 150 30 Sprites/lift.jpg
+7 4500 450 100 550 Sprites/castle_block.png
+7 4500 400 50 50 Sprites/castle_block.png
+2 4600 200 100 100 Sprites/bowser.png
+4 4600 450 400 50 Sprites/bowser_bridge.jpg
+7 5000 400 300 550 Sprites/castle_block.png
+6 5000 350 50 50 Sprites/axe.png
+8 4950 400 50 50 Sprites/chain.jpg
+7 5050 0 300 250 Sprites/castle_block.png
