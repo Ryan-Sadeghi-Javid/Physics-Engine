@@ -25,5 +25,4 @@ This project serves as a sandbox for building physics-based games with editable 
 
 ---
 
-## 📂 Project Structure
-
+Happy Hacking!
