@@ -1,35 +1,29 @@
-# Java Physics Engine 🎮
+# Java Physics Engine 🧱🕹️
 
-A 2D platformer and physics simulation engine built from scratch in Java and JavaFX. This project simulates rigid body dynamics, collisions, and motion using object-oriented programming, modular design, and interactive GUI elements.
+A **modular, extensible 2D platformer engine** built entirely in Java + JavaFX.  
+This project serves as a sandbox for building physics-based games with editable levels, real-time simulation, and full source access — like a lightweight, code-first Unity.
 
-## 🚀 Features
+---
 
-- ✅ Real-time physics simulation
-- ✅ Sprite-based character and enemy movement
-- ✅ Collision detection and response
-- ✅ JavaFX GUI rendering
-- ✅ Modular architecture
-- ✅ Editable levels
+## ✨ Key Features
 
-## 📸 Screenshots
+- 🔧 Custom 2D physics engine (rigid bodies, gravity, drag, friction)
+- 🧩 Fully object-oriented and modular architecture
+- 🎮 Real-time platformer mechanics: movement, enemies, lava, powerups
+- 🖼️ JavaFX-rendered GUI for visualizing physics in motion
+- 🗺️ Editable levels + sprites via external folders
+- 🛠️ Designed for extension, experimentation, and teaching
 
-![Gameplay Screenshot](./preview.png)
+---
 
-## 🧪 How to Run
+## 🛠️ Designed For:
 
-### ✅ Prerequisites
+- ✅ Game development education
+- ✅ Physics or math simulation
+- ✅ JavaFX learning
+- ✅ Custom level design & engine hacking
 
-- Java JDK 17 or newer
-- JavaFX SDK 21 (download here: https://gluonhq.com/products/javafx/)
+---
 
-### 🏃 Run the Game
+## 📂 Project Structure
 
-1. Download or clone the repository
-2. Make sure `Mario.jar` and `LevelSelection.txt` are in the root
-3. Edit the `run.bat` file and update the JavaFX path:
-
-```bat
-@echo off
-set FX="C:\path\to\javafx-sdk-21\lib"
-java --module-path %FX% --add-modules javafx.controls,javafx.fxml,javafx.media -jar Mario.jar
-pause
